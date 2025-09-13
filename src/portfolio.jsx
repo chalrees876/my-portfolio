@@ -80,17 +80,20 @@ const SectionTitle = ({ children }) => (
   <h2 className="text-2xl font-semibold tracking-tight mb-4">{children}</h2>
 );
 
-const LinkButton = ({ href, children, Icon }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black hover:opacity-90 transition"
-  >
-    {Icon ? <Icon className="w-4 h-4" /> : null}
-    {children}
-  </a>
-);
+const LinkButton = ({ href, children, Icon, variant = "solid" }) => {
+  const base = "inline-flex items-center gap-2 px-4 py-2 rounded-xl transition";
+  const styles = {
+    solid: "bg-black text-white dark:bg-white dark:text-black hover:opacity-90",
+    invert: "bg-white text-black hover:opacity-90",
+    outlineLight: "border border-white text-white hover:bg-white/10"
+  };
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className={`${base} ${styles[variant]}`}>
+      {Icon ? <Icon className="w-4 h-4" /> : null}
+      {children}
+    </a>
+  );
+};
 
 // -------------------------
 // Page
@@ -137,28 +140,53 @@ export default function PortfolioSite() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="blueSquare" aria-labelledby="intro">
-              <h1 id="intro">Chris McKenzie</h1>
-              <p className="tagline">Engineer → CS student → ML-minded developer</p>
-              <p className="oneLiner">I build practical data/ML and full-stack projects—clean code, clear results, shipped.</p>
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              {(() => {
+                const FEATURED = PROJECTS[0]; // Tennis Analytics Platform
+                return (
+                  <Card className="bg-blue-600 text-white shadow-xl">
+                    <p className="uppercase tracking-widest text-xs/relaxed opacity-90">Featured Project</p>
+                    <h3 className="text-2xl font-semibold mt-1">{FEATURED.title}</h3>
+                    <p className="text-sm opacity-95 mt-2">{FEATURED.description}</p>
 
-              <ul className="highlights">
-                <li><strong>Tennis ML:</strong> logistic-regression baseline on serve metrics (ROC & confusion matrix)</li>
-                <li><strong>Django Tennis DB:</strong> normalized models + live search</li>
-                <li><strong>Spring Boot Desk Mgmt:</strong> validation + unit tests</li>
-              </ul>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {FEATURED.tags.slice(0, 5).map((t) => (
+                        <span
+                          key={t}
+                          className="text-xs px-2 py-1 rounded-full bg-white/15 border border-white/20"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
 
-              <nav className="links">
-                <a href="#projects">View projects</a>
-                <a href="/resume.pdf">Resume (PDF)</a>
-              </nav>
-            </div>
+                    <ul className="mt-4 space-y-2 text-sm marker:text-white/70 list-disc pl-5">
+                      {FEATURED.highlights.slice(0, 3).map((h) => (
+                        <li key={h} className="opacity-95">{h}</li>
+                      ))}
+                    </ul>
 
-          </motion.div>
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      {FEATURED.repo && (
+                        <LinkButton href={FEATURED.repo} Icon={Github} variant="invert">
+                          Repo
+                        </LinkButton>
+                      )}
+                      <a
+                        href="#projects"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white text-white hover:bg-white/10 transition"
+                      >
+                        See all projects
+                      </a>
+                    </div>
+                  </Card>
+                );
+              })()}
+            </motion.div>
+
         </section>
 
         {/* PROJECTS */}

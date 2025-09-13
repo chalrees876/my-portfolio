@@ -13,7 +13,7 @@ const PROFILE = {
   github: "https://github.com/chalrees876",
   linkedin: "https://www.linkedin.com/in/christopher-mckenzie-63b7aa19b/",
   bio: `CS graduate and Mechanical Engineer pivoting to Data science / ML. I build clean, testable code and ship data-driven features with Python, Django, and scikit-learn.`,
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "src/resume.pdf",
 };
 
 const PROJECTS = [

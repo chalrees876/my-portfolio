@@ -138,6 +138,31 @@ export default function PortfolioSite() {
               <LinkButton href={PROFILE.resumeUrl} Icon={Download}>Resume</LinkButton>
             </div>
           </motion.div>
+          <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="bg-blue-600 text-white shadow-xl">
+                <h3 className="text-2xl font-semibold">Quick facts</h3>
+                <ul className="mt-3 space-y-2 text-sm">
+                  <li><strong>Location:</strong> {PROFILE.location}</li>
+                  <li><strong>Focus:</strong> ML & data pipelines, Django apps</li>
+                  <li><strong>Stack:</strong> Python · Pandas · scikit-learn · Django · React</li>
+                  <li><strong>Now:</strong> Tennis outcome model (better features & calibration)</li>
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a href="#projects"
+                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black hover:opacity-90">
+                    View projects
+                  </a>
+                  <a href={PROFILE.resumeUrl}
+                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white text-white hover:bg-white/10">
+                    Resume (PDF)
+                  </a>
+                </div>
+              </Card>
+            </motion.div>
         </section>
 
         {/* PROJECTS */}

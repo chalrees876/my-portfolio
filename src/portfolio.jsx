@@ -151,16 +151,6 @@ export default function PortfolioSite() {
                   <li><strong>Stack:</strong> Python · Pandas · scikit-learn · Django · React</li>
                   <li><strong>Now:</strong> Tennis outcome model (better features & calibration)</li>
                 </ul>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <a href="#projects"
-                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black hover:opacity-90">
-                    View projects
-                  </a>
-                  <a href={PROFILE.resumeUrl}
-                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white text-white hover:bg-white/10">
-                    Resume (PDF)
-                  </a>
-                </div>
               </Card>
             </motion.div>
         </section>

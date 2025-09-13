@@ -1,9 +1,7 @@
 # Chris McKenzie — Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-blue)](https://chalrees876.github.io/my-portfolio/)
-[![GitHub Pages](https://img.shields.io/badge/Hosting-GitHub%20Pages-lightgrey)](https://chalrees876.github.io/my-portfolio/)
-[![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/React-18-61DAFB)](https://react.dev/)
+[![Preview of site](public/preview.png)](https://chalrees876.github.io/my-portfolio/)
+
 
 **Live Demo:** https://chalrees876.github.io/my-portfolio/
 

@@ -141,15 +141,23 @@ export default function PortfolioSite() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="p-0 overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-indigo-500 via-sky-400 to-teal-300 dark:from-indigo-700 dark:via-sky-600 dark:to-teal-500"/>
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-300 mb-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>{PROFILE.location}</span>
-                </div>
-              </div>
-            </Card>
+            <div className="blueSquare" aria-labelledby="intro">
+              <h1 id="intro">Chris McKenzie</h1>
+              <p className="tagline">Engineer → CS student → ML-minded developer</p>
+              <p className="oneLiner">I build practical data/ML and full-stack projects—clean code, clear results, shipped.</p>
+
+              <ul className="highlights">
+                <li><strong>Tennis ML:</strong> logistic-regression baseline on serve metrics (ROC & confusion matrix)</li>
+                <li><strong>Django Tennis DB:</strong> normalized models + live search</li>
+                <li><strong>Spring Boot Desk Mgmt:</strong> validation + unit tests</li>
+              </ul>
+
+              <nav className="links">
+                <a href="#projects">View projects</a>
+                <a href="/resume.pdf">Resume (PDF)</a>
+              </nav>
+            </div>
+
           </motion.div>
         </section>
 

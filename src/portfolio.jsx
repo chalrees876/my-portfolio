@@ -138,55 +138,6 @@ export default function PortfolioSite() {
               <LinkButton href={PROFILE.resumeUrl} Icon={Download}>Resume</LinkButton>
             </div>
           </motion.div>
-
-          <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              {(() => {
-                const FEATURED = PROJECTS[0]; // Tennis Analytics Platform
-                return (
-                  <Card className="bg-blue-600 text-white shadow-xl">
-                    <p className="uppercase tracking-widest text-xs/relaxed opacity-90">Featured Project</p>
-                    <h3 className="text-2xl font-semibold mt-1">{FEATURED.title}</h3>
-                    <p className="text-sm opacity-95 mt-2">{FEATURED.description}</p>
-
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {FEATURED.tags.slice(0, 5).map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs px-2 py-1 rounded-full bg-white/15 border border-white/20"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-
-                    <ul className="mt-4 space-y-2 text-sm marker:text-white/70 list-disc pl-5">
-                      {FEATURED.highlights.slice(0, 3).map((h) => (
-                        <li key={h} className="opacity-95">{h}</li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      {FEATURED.repo && (
-                        <LinkButton href={FEATURED.repo} Icon={Github} variant="invert">
-                          Repo
-                        </LinkButton>
-                      )}
-                      <a
-                        href="#projects"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white text-white hover:bg-white/10 transition"
-                      >
-                        See all projects
-                      </a>
-                    </div>
-                  </Card>
-                );
-              })()}
-            </motion.div>
-
         </section>
 
         {/* PROJECTS */}

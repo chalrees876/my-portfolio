@@ -11,7 +11,7 @@ const PROFILE = {
   location: "New York, NY",
   email: "Chris.mcke876@gmail.com",
   github: "https://github.com/chalrees876",
-  linkedin: "https://www.linkedin.com/in/your-handle/", // <- replace
+  linkedin: "https://www.linkedin.com/in/christopher-mckenzie-63b7aa19b/", // <- replace
   bio: `CS graduate and Mechanical Engineer pivoting to Data science / ML. I build clean, testable code and ship data-driven features with Python, Django, and scikit-learn.`,
   resumeUrl: "/resume.pdf", // place your PDF at the site root
 };
